@@ -4,9 +4,11 @@ A locally run equity research application built with **Python, FastAPI, retrieva
 
 This repository contains source code for local use. It includes no hosted demo link, cloud deployment configuration, credentials, original report downloads, or personal research history.
 
-## Quick start — no credentials required
+## Run the application on your computer
 
-Requires Python 3.10+.
+This GitHub page shares the project's source code; it does not run or host the application. You can review the code here, or download it and start your own copy using the steps below.
+
+Requires Python 3.10+. Run these commands in a terminal on your own computer:
 
 ```sh
 git clone https://github.com/tvivekanandareddy/folio-equity-research-local.git
@@ -20,9 +22,24 @@ python -m uvicorn app.main:app --host 127.0.0.1 --port 8080
 
 On Windows, activate the environment with `.venv\Scripts\activate` and copy `.env.example` to `.env` using File Explorer or PowerShell.
 
-Open **http://127.0.0.1:8080**. On macOS, `sh start.command` starts an already configured environment.
+Keep that terminal running, then open `http://127.0.0.1:8080` in a browser **on the same computer**. On macOS, `sh start.command` starts an already configured environment.
 
-The default settings use a local SQLite database and keyword-based source search. Built-in illustrative company excerpts are explicitly labeled. Upload a text-based PDF or UTF-8 TXT report to search real documents. Generated AI answers and semantic embeddings remain disabled until a provider is configured.
+### What the local address means
+
+- `127.0.0.1` means the computer where you are opening the browser.
+- `8080` is the port used by the running application.
+- This address works only after the application has been started on that computer. Opening it on another laptop will not connect to your copy of the app; that person must install and start their own copy.
+- Closing the server's terminal stops the application. This repository does not provide a public website URL.
+
+### Basic search and AI features
+
+| Mode | What it does | What you need |
+|---|---|---|
+| Basic source search (default) | Searches report text and returns source excerpts; does not generate an AI answer | Local SQLite and uploaded or downloaded reports; no API credentials |
+| OpenAI RAG (optional) | Uses semantic embeddings and generates cited answers | Your own OpenAI API key; separately billed API usage |
+| Local models (optional) | Runs embeddings and/or answer generation on your computer | Separately installed models and sufficient local memory; no OpenAI key |
+
+Built-in illustrative company excerpts are explicitly labeled. Upload a text-based PDF or UTF-8 TXT report to search real documents. Generated AI answers and semantic embeddings remain disabled until you configure a provider. Supabase is optional: use your own database credentials if you choose it, or leave `DATABASE_URL` blank to keep using SQLite.
 
 ## Features
 
