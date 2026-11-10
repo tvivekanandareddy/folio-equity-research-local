@@ -4,6 +4,10 @@ A locally run equity research application built with **Python, FastAPI, retrieva
 
 This repository contains source code for local use. It includes no hosted demo link, cloud deployment configuration, credentials, original report downloads, or personal research history.
 
+## Complete project guide
+
+Read the [complete beginner guide](docs/Folio_Complete_Beginners_Guide.md) for explanations of the database choices, SQL and NoSQL, embeddings, retrieval, document ingestion, financial examples, security, and troubleshooting. It distinguishes this local version from the earlier hosted variant.
+
 ## Run the application on your computer
 
 This GitHub page shares the project's source code; it does not run or host the application. You can review the code here, or download it and start your own copy using the steps below.
